@@ -6,11 +6,16 @@
         xmlns:local="clr-namespace:P001_CustomEnumComboBoxEditor"
         xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit"
         mc:Ignorable="d"
-        Title="Custom Editors"
+        Title="Custom EnumComboBoxEditor"
         Height="640"
         Width="480"
         ResizeMode="CanMinimize">
+
+    <Window.Resources>
+        <local:PersonInfo x:Key="KPersonInfo"/>
+    </Window.Resources>
+    
     <Grid>
-        <xctk:PropertyGrid/>
+        <xctk:PropertyGrid SelectedObject="{StaticResource KPersonInfo}"/>
     </Grid>
 </Window>
