@@ -1,5 +1,7 @@
 ﻿using System.ComponentModel;
 
+using P001_CustomEnumComboBoxEditor.Editor;
+
 namespace P001_CustomEnumComboBoxEditor
 {
     public enum Gender
@@ -11,6 +13,17 @@ namespace P001_CustomEnumComboBoxEditor
         Male
     }
 
+    public enum Profession
+    {
+        [Description("Столяр")]
+        Carpenter,
+
+        Locksmith,
+
+        [Description("Программист")]
+        Programmer
+    }
+
     public class PersonInfo
     {
         public string FirstName { get; set; }
@@ -19,7 +32,11 @@ namespace P001_CustomEnumComboBoxEditor
 
         public int Age { get; set; }
 
+        [Editor(typeof(CustomEnumComboBoxEditor), typeof(CustomEnumComboBoxEditor))]
         public Gender Sex { get; set; }
+
+        [Editor(typeof(CustomEnumComboBoxEditor), typeof(CustomEnumComboBoxEditor))]
+        public Profession Profession { get; set; }
 
         public PersonInfo()
         {
@@ -27,6 +44,7 @@ namespace P001_CustomEnumComboBoxEditor
             LastName = "Unknown";
             Age = 1;
             Sex = Gender.Female;
+            Profession = Profession.Programmer;
         }
     }
 }

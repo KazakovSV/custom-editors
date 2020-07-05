@@ -4,17 +4,17 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:P001_CustomEnumComboBoxEditor"
+        xmlns:converters="clr-namespace:P001_CustomEnumComboBoxEditor.Editor"
         xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit"
         mc:Ignorable="d"
         Title="Custom EnumComboBoxEditor"
         Height="640"
         Width="480"
         ResizeMode="CanMinimize">
-
     <Window.Resources>
         <local:PersonInfo x:Key="KPersonInfo"/>
     </Window.Resources>
-    
+
     <Grid>
         <xctk:PropertyGrid SelectedObject="{StaticResource KPersonInfo}"/>
     </Grid>
